@@ -1,7 +1,7 @@
 package com.example.doctorproject.controller;
 
+import com.example.doctorproject.dto.RegisterDto;
 import com.example.doctorproject.model.Doctor;
-import com.example.doctorproject.model.Specialization;
 import com.example.doctorproject.model.Treatment;
 import com.example.doctorproject.model.User;
 import com.example.doctorproject.repository.DoctorRepository;
@@ -12,9 +12,11 @@ import com.example.doctorproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
+import javax.validation.Valid;
 import java.util.Arrays;
 import java.util.List;
 
@@ -39,6 +41,16 @@ public class HomeController {
         model.addAttribute("doctors", doctors);
         return "/homeDoctor";
     }
+    @ModelAttribute("spects")
+    public List<String> specialization() {
+        return Arrays.asList("Ginekolog", "Psycholog", "Ortopeda", "Stomatolog", "Psychiatra", "Chirurg", "Dermatolog", "Okulista");
+    }
+    @ModelAttribute("cities")
+    public List<String> city() {
+        return Arrays.asList("Warszawa", "Kraków", "Łódź", "Wrocław", "Poznań", "Szczecin", "Bydgoszcz", "Lublin");
+    }
+
+
 
 //    @RequestMapping(value = "", method = RequestMethod.POST)
 //    public String welcomeSubmit(@RequestParam Long specId, @RequestParam String cit, Model model) {
@@ -46,19 +58,14 @@ public class HomeController {
 //        model.addAttribute("doctors", doctors);
 //        return "/homeDoctor";
 //    }
-
-    @ModelAttribute("spects")
-    public List<String> specialization() {
-        return Arrays.asList("Ginekolog", "Psycholog", "Ortopeda", "Stomatolog", "Psychiatra", "Chirurg", "Dermatolog", "Okulista");
-    }
-
 //    @ModelAttribute("spects")
 //    public List<Specialization> specializations(){
 //        return specializationRepository.findAll();
 //    }
-    @ModelAttribute("cities")
-    public List<String> city() {
-        return Arrays.asList("Warszawa", "Kraków", "Łódź", "Wrocław", "Poznań", "Szczecin", "Bydgoszcz", "Lublin");
+
+    @RequestMapping(value = "/home", method = RequestMethod.GET)
+    public String welcomeHome() {
+        return "/home";
     }
 
     @RequestMapping(value = "/about", method = RequestMethod.GET)
@@ -72,7 +79,7 @@ public class HomeController {
         Long id = specializationRepository.findIdByName(specialization);
         List<Treatment> treatments = treatmentsRepository.findAllBySpecializationId(id);
         model.addAttribute("treatments", treatments);
-        return "/homeTreatments";
+        return "/treatments";
     }
 
 //    @RequestMapping(value = "/homeTreatments/{id}", method = RequestMethod.POST)
@@ -84,6 +91,28 @@ public class HomeController {
     @ModelAttribute
     public List<Treatment> treatment() {
         return treatmentsRepository.findAll();
+    }
+
+    @RequestMapping(value = "/register", method = RequestMethod.GET)
+    public String registration(Model model) {
+        model.addAttribute("registerDto", new RegisterDto());
+        return "/register";
+    }
+    @RequestMapping(value = "/register",method = RequestMethod.POST)
+    public String register(@Valid @ModelAttribute RegisterDto registerDto, BindingResult result){
+        User user=null;
+
+        if(!result.hasErrors() ){
+            user=userService.registerUser(registerDto);
+            if(user!=null) {
+                return "redirect:/login";
+            }
+        }
+        return "/register";
+    }
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login() {
+        return "login";
     }
 
 

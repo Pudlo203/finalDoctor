@@ -8,6 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="fragments/header.jsp"/>
 
+
 <main class="container">
     <div class="bg-light p-5 rounded">
         <h1>Navbar example</h1>

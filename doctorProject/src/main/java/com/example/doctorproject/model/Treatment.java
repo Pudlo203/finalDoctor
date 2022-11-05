@@ -16,7 +16,7 @@ public class Treatment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String nameTreatment;
+    private String name;
     private float price;
 
     @ManyToOne(fetch = FetchType.EAGER)

@@ -13,14 +13,14 @@
 
 <div class="container">
     <div class="card card-login mx-auto mt-5">
-        <div class="card-header">Login</div>
+        <div class="card-header">Zaloguj się</div>
         <div class="card-body">
             <form method="post">
 <%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                 <div class="form-group">
                     <div class="form-label-group">
                         <label for="inputUsername">Username</label>
-                        <input type="text" name="username" id="inputUsername" class="form-control" placeholder="Email address" required="required" autofocus="autofocus">
+                        <input type="text" name="username" id="inputUsername" class="form-control" placeholder="username" required="required" autofocus="autofocus">
                     </div>
                 </div>
                 <div class="form-group">
@@ -31,6 +31,7 @@
                 </div>
                 <input type="submit" class="btn btn-primary btn-block" value="Login"/>
             </form>
+            <a class="d-block small mt-3" href="/register">Rejestracja</a>
 
         </div>
     </div>

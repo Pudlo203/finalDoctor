@@ -9,6 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="fragments/header.jsp"/>
 
+
 <table class="table">
     <thead>
     <tr>
@@ -39,8 +40,10 @@
             <td>${doctor.phone}</td>
             <td>${doctor.email}</td>
             <td>
-<%--                <input type="submit" class="btn btn-primary" value="Umów">--%>
-                <a href="/homeTreatments/${doctor.specialization}"
+                    <%-- <a href="<c:url value="/homeTreatments/${doctor.specialization}"/>">Umów<a/>--%>
+                    <%--  <input type="submit" class="btn btn-primary" value="Umów">--%>
+<%--                        <a href="/homeTreatments"--%>
+                     <a href="/homeTreatments/${doctor.specialization}"
                    class="btn btn-info rounded-0 text-light m-1"
                    onclick="return confirm('Czy na pewno chcesz umówić wizytę?')">Umów</a>
             </td>

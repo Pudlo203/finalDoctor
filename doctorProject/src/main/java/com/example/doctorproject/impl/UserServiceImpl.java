@@ -17,7 +17,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User save(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
@@ -27,11 +27,12 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User findByUsername(String username) {
-        return null;
+        return userRepository.findByUsername(username);
     }
 
     @Override
     public User registerUser(RegisterDto dto) {
-        return null;
+        User user = dto.map();
+        return userRepository.save(user);
     }
 }

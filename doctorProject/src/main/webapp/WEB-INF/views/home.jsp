@@ -17,6 +17,9 @@
 <div class="position-relative">
 
     <h1> Znajdź lekarza i umów wizytę!</h1>
+    <div class="card card-login mx-auto mt-5">
+
+
 <form method="post">
 <%--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
     <div class="mb-3">
@@ -38,6 +41,7 @@
     </div>
     <input type="submit" class="btn btn-primary" value="Szukaj">
 </form>
+</div>
 </div>
 
 

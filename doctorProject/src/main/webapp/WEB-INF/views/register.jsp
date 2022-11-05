@@ -13,7 +13,7 @@
 
 <div class="container">
     <div class="card card-register mx-auto mt-5">
-        <div class="card-header">Register an Account</div>
+        <div class="card-header">Zarejestruj się</div>
         <div class="card-body">
             <form:form method="post">
 <%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
@@ -64,7 +64,7 @@
             </form:form>
 
             <div class="text-center">
-                <a class="d-block small mt-3" href="/login">Login Page</a>
+                <a class="d-block small mt-3" href="/login">Zaloguj się</a>
 <%--                <a class="d-block small" href="/forgot-password">Forgot Password?</a>--%>
             </div>
         </div>
