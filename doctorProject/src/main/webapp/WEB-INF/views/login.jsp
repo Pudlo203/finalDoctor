@@ -7,7 +7,7 @@
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="fragments/header.jsp"/>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%--<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>--%>
 
 <body class="bg-dark">
 
@@ -16,7 +16,7 @@
         <div class="card-header">Login</div>
         <div class="card-body">
             <form method="post">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                 <div class="form-group">
                     <div class="form-label-group">
                         <label for="inputUsername">Username</label>

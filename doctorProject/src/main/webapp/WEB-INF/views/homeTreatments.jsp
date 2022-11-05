@@ -24,11 +24,11 @@
                 <div class="input-group mb-3">
                     <select class="form-select" id="inputGroupSelect02">
                         <option selected>Choose...</option>
-                        <option>
-                            <c:forEach var="treatment" items="${treatments}">
-                                <options value="${treatment}">${treatment}</options> <br>
-                            </c:forEach>
-                        </option>
+<%--                        <option>--%>
+<%--                            <c:forEach var="treatment" items="${treatments}">--%>
+<%--                                <options value="${treatment}">${treatment}</options> <br>--%>
+<%--                            </c:forEach>--%>
+<%--                        </option>--%>
 
 <%--                        <option value="1">One</option>--%>
 <%--                        <option value="2">Two</option>--%>

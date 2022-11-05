@@ -75,11 +75,11 @@ public class HomeController {
         return "/homeTreatments";
     }
 
-    @RequestMapping(value = "/homeTreatments/{id}", method = RequestMethod.POST)
-    public String chooseYourTreatmentsFormSubmit(@PathVariable Long id, Model model) {
-
-        return "/homeTreatments";
-    }
+//    @RequestMapping(value = "/homeTreatments/{id}", method = RequestMethod.POST)
+//    public String chooseYourTreatmentsFormSubmit(@PathVariable Long id, Model model) {
+//
+//        return "/homeTreatments";
+//    }
 
     @ModelAttribute
     public List<Treatment> treatment() {

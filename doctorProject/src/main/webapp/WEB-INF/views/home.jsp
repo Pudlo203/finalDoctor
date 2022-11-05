@@ -18,7 +18,7 @@
 
     <h1> Znajdź lekarza i umów wizytę!</h1>
 <form method="post">
-    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
     <div class="mb-3">
         <label class="form-label">Lekarz: </label>
         <select name="spec" aria-label="Default select example">

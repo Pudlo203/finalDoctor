@@ -16,7 +16,7 @@
         <div class="card-header">Register an Account</div>
         <div class="card-body">
             <form:form method="post">
-                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
 
                 <div class="form-group">
                     <div class="form-label-group">
