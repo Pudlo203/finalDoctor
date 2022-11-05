@@ -112,7 +112,11 @@ public class HomeController {
     }
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login() {
-        return "login";
+        return "/login";
+    }
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public String loginok() {
+        return "/summary";
     }
 
 

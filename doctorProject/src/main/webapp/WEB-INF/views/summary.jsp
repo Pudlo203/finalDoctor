@@ -11,9 +11,10 @@
 
 <main class="container">
     <div class="bg-light p-5 rounded">
-        <h1>Navbar example</h1>
-        <p class="lead">This example is a quick exercise to illustrate how fixed to top navbar works. As you scroll, it will remain fixed to the top of your browser’s viewport.</p>
-        <a class="btn btn-lg btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>
+        <h1>Dziękujemy za umówienie wizyty</h1>
+        <p class="lead">bla bla bla </p>
+        <a class="btn btn-lg btn-primary" href="/" role="button">Wróć do wyszukiwania doktorów</a>
+        <a class="btn btn-lg btn-primary" href="/homeDoctor" role="button">Wróć do informacji o doktorze</a>
     </div>
 </main>
 

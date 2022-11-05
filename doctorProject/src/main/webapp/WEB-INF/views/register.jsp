@@ -26,8 +26,8 @@
                 </div>
                 <div class="form-group">
                     <div class="form-label-group">
-                        <label for="lastName">Nazwisko</label>
-                        <input type="text" id="lastName" name="name" class="form-control" placeholder="First name" required="required" autofocus="autofocus">
+                        <label for="lastname">Nazwisko</label>
+                        <input type="text" id="lastname" name="lastname" class="form-control" placeholder="Last name" required="required">
                     </div>
                 </div>
                 <div class="form-group">

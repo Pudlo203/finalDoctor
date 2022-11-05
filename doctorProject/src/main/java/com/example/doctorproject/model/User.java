@@ -18,7 +18,7 @@ public class User {
     @NotEmpty
     private String name;
     @NotEmpty
-    private String lastName;
+    private String lastname;
     @NotEmpty
     private String username;
     @NotEmpty

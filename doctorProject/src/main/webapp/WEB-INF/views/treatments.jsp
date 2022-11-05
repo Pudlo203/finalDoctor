@@ -24,17 +24,15 @@
                 <div class="form-group">
                     <select class="form-select" aria-label="Default select example">
                         <option selected>Wybierz zabieg</option>
-                        <option>
                             <c:forEach var="treatment" items="${treatments}">
-                                <options value="${treatment}">${treatment.name} , ${treatment.price}zł</options><br>
+                                <option value="${treatment}">${treatment.name} , ${treatment.price}zł</option><br>
                             </c:forEach>
-                        </option>
                     </select>
                 </div>
 <%--                <input type="submit" class="btn btn-primary btn-block" value="Login"/>--%>
                 <a href="/register" class="btn btn-primary btn-block">Rejestracja</a>
                 <a href="/login" class="btn btn-primary btn-block">Zaloguj się</a>
-                <a href="/home" class="btn btn-primary btn-block">Wróć do wyszukiwania</a>
+                <a href="/" class="btn btn-primary btn-block">Wróć do wyszukiwania</a>
             </form>
 
         </div>
