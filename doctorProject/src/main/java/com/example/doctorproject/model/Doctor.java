@@ -3,6 +3,7 @@ package com.example.doctorproject.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
+import org.hibernate.mapping.ToOne;
 import org.springframework.lang.Nullable;
 
 import javax.persistence.*;
@@ -26,7 +27,7 @@ public class Doctor {
     @NotNull
     private String email;
 
-//    @OneToOne
+//    @ManyToOne
 //    @ToString.Exclude
 //    @EqualsAndHashCode.Exclude
 //    private Specialization specialization;

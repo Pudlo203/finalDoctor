@@ -11,7 +11,7 @@
 
 <jsp:include page="fragments/header.jsp"/>
 
-<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+<%--<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
 
 <div class="modal" tabindex="-1">
     <div class="modal-dialog">

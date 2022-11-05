@@ -40,7 +40,7 @@
             <td>${doctor.email}</td>
             <td>
 <%--                <input type="submit" class="btn btn-primary" value="Umów">--%>
-                <a href="/homeTreatments/${doctor.id}"
+                <a href="/homeTreatments/${doctor.specialization}"
                    class="btn btn-info rounded-0 text-light m-1"
                    onclick="return confirm('Czy na pewno chcesz umówić wizytę?')">Umów</a>
             </td>

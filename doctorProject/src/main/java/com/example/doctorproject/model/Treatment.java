@@ -1,8 +1,12 @@
 package com.example.doctorproject.model;
 
 import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Data
@@ -15,8 +19,8 @@ public class Treatment {
     private String nameTreatment;
     private float price;
 
-//    @OneToOne
-//    @ToString.Exclude
-//    @EqualsAndHashCode.Exclude
-//    private List<Treatment> treatment;
+    @ManyToOne(fetch = FetchType.EAGER)
+    @ToString.Exclude
+    @EqualsAndHashCode.Exclude
+    private Specialization specialization;
 }
