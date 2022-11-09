@@ -18,3 +18,7 @@ import javax.persistence.*;
 //    private String month;
 //    private String hour;
 //}
+
+//private DateTime datetime;
+//formularz  type="datetime"
+//do przekazania 2 parametry

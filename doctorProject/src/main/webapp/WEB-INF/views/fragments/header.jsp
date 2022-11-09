@@ -25,6 +25,9 @@
                     <a class="navbar-brand" href="/listDoctor">Wyszukaj lekarzy z Twojego miasta</a>
                 </li>
                 <li class="nav-item">
+                    <a class="navbar-brand" href="/listClinic">Wyszukaj przychodnie w Twoim mieście</a>
+                </li>
+                <li class="nav-item">
                     <a class="navbar-brand" href="/about">O nas</a>
                 </li>
             </ul>

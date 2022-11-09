@@ -1,14 +1,12 @@
 package com.example.doctorproject.controller;
 
 import com.example.doctorproject.dto.RegisterDto;
+import com.example.doctorproject.model.Clinic;
 import com.example.doctorproject.model.Doctor;
 //import com.example.doctorproject.model.History;
 import com.example.doctorproject.model.Treatment;
 import com.example.doctorproject.model.User;
-import com.example.doctorproject.repository.DoctorRepository;
-import com.example.doctorproject.repository.SpecializationRepository;
-import com.example.doctorproject.repository.TreatmentsRepository;
-import com.example.doctorproject.repository.UserRepository;
+import com.example.doctorproject.repository.*;
 import com.example.doctorproject.service.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -36,6 +34,7 @@ public class HomeController {
     private final DoctorRepository doctorRepository;
     private final HttpSession session;
     private final SpecializationRepository specializationRepository;
+    private final ClinicRepository clinicRepository;
 
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -47,6 +46,9 @@ public class HomeController {
     public String welcomeSubmit(@RequestParam String spec, @RequestParam String cit, Model model) {
         List<Doctor> doctors = doctorRepository.findAllBySpecializationIgnoreCaseAndCityIgnoreCase(spec, cit);
         model.addAttribute("doctors", doctors);
+        if(doctors.isEmpty()){
+            return "/empty";
+        }
         return "/homeDoctor";
     }
 
@@ -80,6 +82,18 @@ public class HomeController {
         List<Doctor> doctorList = doctorRepository.findAllByCityIgnoreCase(cit);
         model.addAttribute("doctorList", doctorList);
         return "/listChoose";
+    }
+
+    @RequestMapping(value = "/listClinic", method = RequestMethod.GET)
+    public String showYourClinicOk() {
+        return "/listDoctors";
+    }
+
+    @RequestMapping(value = "/listClinic", method = RequestMethod.POST)
+    public String showYourClinic(@RequestParam String cit, Model model) {
+        List<Clinic> clinicList = clinicRepository.findAllByCityIgnoreCase(cit);
+        model.addAttribute("clinicList", clinicList);
+        return "/listclinic";
     }
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
