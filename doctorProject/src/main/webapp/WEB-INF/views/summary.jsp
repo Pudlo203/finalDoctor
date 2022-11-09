@@ -12,9 +12,8 @@
 <main class="container">
     <div class="bg-light p-5 rounded">
         <h1>Dziękujemy za umówienie wizyty</h1>
-        <p class="lead">bla bla bla </p>
+        <p class="lead"></p>
         <a class="btn btn-lg btn-primary" href="/" role="button">Wróć do wyszukiwania doktorów</a>
-        <a class="btn btn-lg btn-primary" href="/homeDoctor" role="button">Wróć do informacji o doktorze</a>
     </div>
 </main>
 

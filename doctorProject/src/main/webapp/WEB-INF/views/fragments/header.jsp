@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ph
@@ -17,36 +18,17 @@
 <header>
     <nav class="navbar navbar-expand-lg bg-light">
         <div class="container-fluid">
-<%--            <a class="navbar-brand" href="login">Zaloguj się</a>--%>
-<%--            <a class="navbar-brand" href="registration">Zarejestruj się</a>--%>
-<%--            <a class="navbar-brand" href="#">Wyloguj się się</a>--%>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <a class="navbar-brand active" href="/login/login">Zaloguj się</a>
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="about">O nas</a>
-                    </li>
-<%--                    <li class="nav-item dropdown">--%>
-<%--                        <a class="nav-link dropdown-toggle" href="about" role="button" data-bs-toggle="dropdown" aria-expanded="false">--%>
-<%--                            O nas--%>
-<%--                        </a>--%>
-<%--                        <ul class="dropdown-menu">--%>
-<%--                            <li><a class="dropdown-item" href="about">O nas</a></li>--%>
-<%--                            <li><a class="dropdown-item" href="#">Nasi lekarze</a></li>--%>
-<%--&lt;%&ndash;                            <li><hr class="dropdown-divider"></li>&ndash;%&gt;--%>
-<%--&lt;%&ndash;                            <li><a class="dropdown-item" href="#">Something else here</a></li>&ndash;%&gt;--%>
-<%--                        </ul>--%>
-<%--                    </li>--%>
-<%--                    <li class="nav-item">--%>
-<%--                        <a class="nav-link" href="#">Features</a>--%>
-<%--                    </li>--%>
-<%--                    <li class="nav-item">--%>
-<%--                        <a class="nav-link" href="#">Pricing</a>--%>
-<%--                    </li>--%>
-                </ul>
-            </div>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/listDoctor">Wyszukaj lekarzy z Twojego miasta</a>
+                </li>
+                <li class="nav-item">
+                    <a class="navbar-brand" href="/about">O nas</a>
+                </li>
+            </ul>
+        </div>
         </div>
     </nav>
 </header>

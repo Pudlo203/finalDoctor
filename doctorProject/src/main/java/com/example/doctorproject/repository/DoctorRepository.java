@@ -11,4 +11,5 @@ import java.util.List;
 @Repository
 public interface DoctorRepository extends JpaRepository<Doctor,Long> {
     List<Doctor> findAllBySpecializationIgnoreCaseAndCityIgnoreCase(String specialization, String city);
+    List<Doctor> findAllByCityIgnoreCase(String city);
 }

@@ -1,12 +1,13 @@
 package com.example.doctorproject.model;
 
 import lombok.Data;
-import org.springframework.lang.Nullable;
+import lombok.EqualsAndHashCode;
+import lombok.ToString;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import java.time.LocalDateTime;
-import java.util.Set;
+import java.util.List;
 
 @Entity
 @Data
@@ -39,4 +40,8 @@ public class User {
         LocalDateTime time = LocalDateTime.now();
         this.setUpdatedAt(time);
     }
+//    @OneToMany(fetch =  FetchType.EAGER)
+//    @ToString.Exclude
+//    @EqualsAndHashCode.Exclude
+//    private List<History> history;
 }

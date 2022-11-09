@@ -1,3 +1,4 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%--
   Created by IntelliJ IDEA.
   User: ph
@@ -16,7 +17,6 @@
         <div class="card-header">Zaloguj się</div>
         <div class="card-body">
             <form method="post">
-<%--                <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
                 <div class="form-group">
                     <div class="form-label-group">
                         <label for="inputUsername">Username</label>
@@ -28,11 +28,12 @@
                         <label for="inputPassword">Hasło</label>
                         <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required="required">
                     </div>
+                    <div class="col-md-6">
                 </div>
                 <input type="submit" class="btn btn-primary btn-block" value="Login"/>
+                </div>
             </form>
             <a class="d-block small mt-3" href="/register">Rejestracja</a>
-
         </div>
     </div>
 </div>

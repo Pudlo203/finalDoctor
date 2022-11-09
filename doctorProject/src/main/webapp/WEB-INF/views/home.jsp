@@ -13,35 +13,27 @@
 <jsp:include page="fragments/header.jsp"/>
 
 
-
-<div class="position-relative">
-
-    <h1> Znajdź lekarza i umów wizytę!</h1>
-    <div class="card card-login mx-auto mt-5">
-
-
-<form method="post">
-<%--    <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>--%>
-    <div class="mb-3">
-        <label class="form-label">Lekarz: </label>
-        <select name="spec" aria-label="Default select example">
-
-            <c:forEach var="spec" items="${spects}">
-                <option value="${spec}">${spec}</option>
-            </c:forEach>
-        </select>
-    </div>
-    <div class="mb-3">
-        <label class="form-label">Miasto: </label>
-        <select name="cit" aria-label="Default select example">
-        <c:forEach var="cit" items="${cities}">
-            <option value="${cit}">${cit}</option>
-        </c:forEach>
-        </select>
-    </div>
-    <input type="submit" class="btn btn-primary" value="Szukaj">
-</form>
-</div>
+<div class="container px-4 py-5">
+    <h1 class="fw-normal"> Znajdź lekarza i umów wizytę!</h1>
+    <form method="post">
+        <div class="mb-3">
+            <label class="form-label">Lekarz: </label>
+            <select name="spec" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <c:forEach var="spec" items="${spects}">
+                    <option value="${spec}">${spec}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Miasto: </label>
+            <select name="cit" class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                <c:forEach var="cit" items="${cities}">
+                    <option value="${cit}">${cit}</option>
+                </c:forEach>
+            </select>
+        </div>
+        <input type="submit" class="btn btn-primary" value="Szukaj">
+    </form>
 </div>
 
 
@@ -61,7 +53,6 @@
 <%--    </div>--%>
 <%--    <form:button type="submit" class="btn btn-primary" value="Szukaj"></form:button>--%>
 <%--</form:form>--%>
-
 
 
 <jsp:include page="fragments/footer.jsp"/>

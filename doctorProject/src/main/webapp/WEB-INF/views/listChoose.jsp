@@ -2,8 +2,8 @@
 <%--
   Created by IntelliJ IDEA.
   User: ph
-  Date: 31.10.2022
-  Time: 14:00
+  Date: 08.11.2022
+  Time: 18:41
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
@@ -23,7 +23,7 @@
     </tr>
     </thead>
     <tbody class="table-group-divider">
-    <c:forEach var="doctor" items="${doctors}">
+    <c:forEach var="doctor" items="${doctorList}">
         <tr>
             <th scope="row">${doctor.name}</th>
             <td>${doctor.lastName}</td>
@@ -36,16 +36,10 @@
             <td>${doctor.description}</td>
             <td>${doctor.phone}</td>
             <td>${doctor.email}</td>
-            <td>
-                     <a href="/homeTreatments/${doctor.specialization}"
-                   class="btn btn-info rounded-0 text-light m-1"
-                   onclick="return confirm('Czy na pewno chcesz umówić wizytę?')">Umów</a>
-            </td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<a href="/" class="btn btn-warning rounded-0 text-light m-1">Wróć</a>
-
+<a href="/" class="btn btn-warning rounded-0 text-light m-1">Wróć do strony głównej </a>
 
 <jsp:include page="fragments/footer.jsp"/>
