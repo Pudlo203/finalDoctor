@@ -86,7 +86,7 @@ public class HomeController {
 
     @RequestMapping(value = "/listClinic", method = RequestMethod.GET)
     public String showYourClinicOk() {
-        return "/listDoctors";
+        return "/listClinic";
     }
 
     @RequestMapping(value = "/listClinic", method = RequestMethod.POST)
