@@ -22,6 +22,9 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 <span class="navbar-toggler-icon"></span>
                 <li class="nav-item">
+                    <a class="navbar-brand" href="/doctorForm">Dodaj doktora</a>
+                </li>
+                <li class="nav-item">
                     <a class="navbar-brand" href="/listDoctor">Wyszukaj lekarzy z Twojego miasta</a>
                 </li>
                 <li class="nav-item">

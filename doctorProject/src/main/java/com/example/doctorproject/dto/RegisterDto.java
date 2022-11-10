@@ -18,7 +18,7 @@ import static org.mindrot.jbcrypt.BCrypt.hashpw;
 public class RegisterDto {
 
     @NotEmpty
-   @Size(min=3, max=20)
+    @Size(min=3, max=20)
     private String name;
     @NotEmpty
     @Size(min=3, max=20)

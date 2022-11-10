@@ -1,5 +1,6 @@
 package com.example.doctorproject.controller;
 
+import com.example.doctorproject.dto.DoctorDto;
 import com.example.doctorproject.dto.RegisterDto;
 import com.example.doctorproject.model.Clinic;
 import com.example.doctorproject.model.Doctor;
@@ -7,8 +8,10 @@ import com.example.doctorproject.model.Doctor;
 import com.example.doctorproject.model.Treatment;
 import com.example.doctorproject.model.User;
 import com.example.doctorproject.repository.*;
+import com.example.doctorproject.service.DoctorService;
 import com.example.doctorproject.service.UserService;
 import lombok.RequiredArgsConstructor;
+import org.eclipse.jdt.internal.compiler.classfmt.ExternalAnnotationProvider;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -20,7 +23,6 @@ import javax.validation.constraints.Size;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-
 import static org.mindrot.jbcrypt.BCrypt.hashpw;
 
 @RequiredArgsConstructor
@@ -35,6 +37,7 @@ public class HomeController {
     private final HttpSession session;
     private final SpecializationRepository specializationRepository;
     private final ClinicRepository clinicRepository;
+    private final DoctorService doctorService;
 
 
     @RequestMapping(value = "", method = RequestMethod.GET)
@@ -46,7 +49,7 @@ public class HomeController {
     public String welcomeSubmit(@RequestParam String spec, @RequestParam String cit, Model model) {
         List<Doctor> doctors = doctorRepository.findAllBySpecializationIgnoreCaseAndCityIgnoreCase(spec, cit);
         model.addAttribute("doctors", doctors);
-        if(doctors.isEmpty()){
+        if (doctors.isEmpty()) {
             return "/empty";
         }
         return "/homeDoctor";
@@ -133,6 +136,7 @@ public class HomeController {
         model.addAttribute("registerDto", new RegisterDto());
         return "/register";
     }
+
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public String register(@Valid @ModelAttribute("registerDto") RegisterDto registerDto, BindingResult result) {
         User user = null;
@@ -229,6 +233,23 @@ public class HomeController {
             return "/history";
         }
         return "/login";
+    }
+
+
+    @RequestMapping(value = "/doctorForm", method = RequestMethod.GET)
+    public String addDoctorByRegisterForm() {
+        return "/doctorForm";
+    }
+    @RequestMapping(value = "/doctorForm", method = RequestMethod.POST)
+    public String addDoctorByRegisterForm(@Valid @ModelAttribute("doctorDto") DoctorDto doctorDto, BindingResult result) {
+        Doctor doctor = null;
+        if (!result.hasErrors()) {
+            doctor = doctorService.addDoctor(doctorDto);
+            if (doctor != null) {
+                return "/summaryDoctor";
+            }
+        }
+        return "/doctorForm";
     }
 
 
